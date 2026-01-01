@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const { connectRedis } = require("./config/redis");
 
 dotenv.config();
 
@@ -37,7 +36,6 @@ const connectDB = async () => {
 };
 
 connectDB();
-connectRedis();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
